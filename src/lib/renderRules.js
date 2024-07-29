@@ -1,15 +1,15 @@
 import React from 'react';
 import {
+  Platform,
+  StyleSheet,
   Text,
   TouchableWithoutFeedback,
   View,
-  Platform,
-  StyleSheet,
 } from 'react-native';
 import FitImage from 'react-native-fit-image';
 
-import openUrl from './util/openUrl';
 import hasParents from './util/hasParents';
+import openUrl from './util/openUrl';
 
 import textStyleProps from './data/textStyleProps';
 
@@ -301,7 +301,7 @@ const renderRules = {
 
   // Text Output
   text: (node, children, parent, styles, inheritedStyles = {}) => (
-    <Text key={node.key} style={[inheritedStyles, styles.text]}>
+    <Text key={node.key} style={[styles.text, inheritedStyles]}>
       {node.content}
     </Text>
   ),
